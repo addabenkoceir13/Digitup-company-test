@@ -42,3 +42,15 @@ DigitupCompany RESTful API clone.
 ```bash
  php artisan serve
 ```
+
+### Account 
+Admin 
+```bash
+email: admin@digitup.dz
+password: test@admin123
+```
+User
+```bash
+email: user1@digitup.dz
+password: test@user123
+```
