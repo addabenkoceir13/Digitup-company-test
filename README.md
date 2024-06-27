@@ -4,32 +4,41 @@
 DigitupCompany RESTful API clone.
 
 ## Technologies Used 
-- Laravel
-- PHP
-- MySQL 
+- Laravel v10
+- MySQL v8
 
 ## Feature
   - Authentication
   - Task Management
-
-## Requirement
-- [php version 7.3.0](https://www.php.net)
-- [composer](https://getcomposer.org)
-
-## How To Use
-
+  
 ### Download Repository
 
-```bash
-# Clone this repository
- git clone https://github.com/MedjadjiAbdelkadir/DigitupCompany.git`
-# Go to the project directory
- cd DigitupCompany
-# Create file .env
- cp .env.example .env.
-# Create file .env.testing
- cp .env.example .env.testing
 
-# Generate Key Of .env
+##### Clone this repository
+```bash
+ git clone https://github.com/addabenkoceir13/Digitup-company-test.git
+```
+##### Create file .env
+```bash
+ cp .env.example .env.
+```
+##### Generate Key Of .env
+```bash
  php artisan key:generate.
+```
+### Create Database && Migration && Seeding
+
+> create  database if not exists in MYSQL
+
+```bash
+ php artisan migrate
+```
+```bash
+ php artisan db:seed
+```
+
+### Run Project
+ Run the project
+```bash
+ php artisan serve
 ```
