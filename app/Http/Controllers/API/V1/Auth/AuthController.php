@@ -25,7 +25,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 "status" => false,
-                "message"=> $validator->errors(),
+                "errors"=> $validator->errors(),
             ],401);
         }
 
@@ -92,11 +92,11 @@ class AuthController extends Controller
                 "message"   => "User Login Successfully",
                 "token"     => $apiToken,
                 "data"      => new UserResource($user),
-            ],200);
+            ],201);
         }
         catch (Exception $e) {
             return response()->json([
-                'status' => 0,
+                'status' => false,
                 'message' => $e->getMessage(),
             ]);
         }

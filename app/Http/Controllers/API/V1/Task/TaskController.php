@@ -25,7 +25,7 @@ class TaskController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 "status" => false,
-                "message"=> $validator->errors(),
+                "errors"=> $validator->errors(),
             ],401);
         }
 
@@ -109,7 +109,7 @@ class TaskController extends Controller
             return response()->json([
                 'status' => false,
                 'message' => $e->getMessage(),
-            ],400);
+            ],403);
         }
     }
 
@@ -153,7 +153,7 @@ class TaskController extends Controller
             return response()->json([
                 'status' => false,
                 'message' => $e->getMessage(),
-            ],400);
+            ],403);
         }
     }
 
@@ -186,7 +186,7 @@ class TaskController extends Controller
             return response()->json([
                 'status'  => false,
                 'message' => $e->getMessage()
-            ],401);
+            ],403);
         }
     }
 
@@ -200,20 +200,20 @@ class TaskController extends Controller
                 return response()->json([
                     'status' => false,
                     'message' => 'Server Error. Can\'t restore the task at this time.',
-                ], 500);
+                ],404);
             }
 
             return response()->json([
                 'status' => true,
                 'message' => 'Task restored successfully.'
-            ]);
+            ],201);
 
         }
         catch (Exception $e) {
             return response()->json([
                 'status'  => false,
                 'message' => $e->getMessage()
-            ]);
+            ],403);
         }
     }
 }
