@@ -54,3 +54,14 @@ User
 email: user1@digitup.dz
 password: test@user123
 ```
+ ### Testing
+>  User Testing 
+
+```bash
+php artisan test --filter=UserTest
+```
+> Tasks Testing
+
+```bash
+php artisan test --filter=TaskAPITest
+```
